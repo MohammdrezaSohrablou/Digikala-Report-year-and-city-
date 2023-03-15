@@ -13,7 +13,7 @@ internal class Program
 
         Console.WriteLine("processing...");
         Console.WriteLine("please wait, don't close -cmd-'");
-        //x.CityReport(address);
+        x.CityReport(address);
         x.YearsReport(address);
         Console.WriteLine("done !");
     }
