@@ -184,7 +184,7 @@ internal class Program
             {
                 Console.WriteLine("enter the itemID :");
                 Iid = int.Parse(Console.ReadLine());
-                Console.WriteLine($"toyal sales for {Iid} is {op.SumSalesByYear(Iid)} IR Rials");
+                Console.WriteLine($"toyal sales for {Iid} is {op.SumSalesByItem(Iid)} IR Rials");
                 Console.WriteLine(" ");
             }
         }
