@@ -74,10 +74,10 @@ namespace finaldigikala.DigikalaOperations
 
         }
 
-        private List<int> AllSalesByItem(int year)
+        private List<int> AllSalesByItem(int Iid)
         {
             return Digikaladata.
-             Where(x => x.ItemId == year).Select(x => x.GrossAmount).ToList();
+             Where(x => x.ItemId == Iid).Select(x => x.GrossAmount).ToList();
         }
         public long SumSalesByItem(int Iid)
         {
