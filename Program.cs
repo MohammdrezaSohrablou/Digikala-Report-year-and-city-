@@ -1,4 +1,4 @@
-﻿using finaldigikala.Model;
+using finaldigikala.Model;
 using finaldigikala.DigikalaOperations;
 using System;
 using finaldigikala.Operations.CitesAndYearsInfo;
@@ -135,6 +135,7 @@ internal class Program
                 Cid = int.Parse(Console.ReadLine());
                 Console.WriteLine($"orders for {Cid} are {op.CustomerSearch(Cid)}");
                 Console.WriteLine(" ");
+
             }
             else if (key1 == "2")//!
             {
@@ -147,7 +148,7 @@ internal class Program
             {
                 Console.WriteLine("enter itemID :");
                 Iid = int.Parse(Console.ReadLine());
-                Console.WriteLine($"orders for {Iid} are {op.OrderSearch(Iid)}");
+                Console.WriteLine($"orders for {Iid} are {op.ItemSearch(Iid)}");
                 Console.WriteLine(" ");
             }
         }
@@ -206,6 +207,3 @@ internal class Program
         
     }
 }
-
-
-
