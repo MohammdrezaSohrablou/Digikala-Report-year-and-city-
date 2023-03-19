@@ -133,7 +133,7 @@ internal class Program
             {
                 Console.WriteLine("enter customerID :");
                 Cid = int.Parse(Console.ReadLine());
-                Console.WriteLine($"orders for {Cid} are {op.CustomerSearch(Cid)}");
+                Console.WriteLine($"the first order for {Cid} are {op.CustomerSearch(Cid)}");
                 Console.WriteLine(" ");
 
             }
@@ -166,26 +166,26 @@ internal class Program
                     b = true;
                 }
             } while (b);
-            //!
+            
             if (key1 == "1")
             {
                 Console.WriteLine("enter the cityname: ");
                 city = Console.ReadLine();
-                Console.WriteLine($"toyal sales for {city} is {op.SumSalesByCities(city)} IR Rials");
+                Console.WriteLine($"total sales for {city} is {op.SumSalesByCities(city)} IR Rials");
                 Console.WriteLine(" ");
             }
             else if (key1 == "2")
             {
                 Console.WriteLine("enter the year :");
                 Year = int.Parse(Console.ReadLine());
-                Console.WriteLine($"toyal sales for {Year} is {op.SumSalesByYear(Year)} IR Rials ");
+                Console.WriteLine($"total sales for {Year} is {op.SumSalesByYear(Year)} IR Rials ");
                 Console.WriteLine(" ");
             }
             else if (key1 == "3")
             {
                 Console.WriteLine("enter the itemID :");
                 Iid = int.Parse(Console.ReadLine());
-                Console.WriteLine($"toyal sales for {Iid} is {op.SumSalesByItem(Iid)} IR Rials");
+                Console.WriteLine($"total sales for {Iid} is {op.SumSalesByItem(Iid)} IR Rials");
                 Console.WriteLine(" ");
             }
         }
@@ -207,3 +207,6 @@ internal class Program
         
     }
 }
+
+
+
