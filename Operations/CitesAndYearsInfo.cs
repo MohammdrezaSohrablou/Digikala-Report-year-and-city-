@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +24,7 @@ namespace finaldigikala.Operations.CitesAndYearsInfo
 
             foreach (string city in citySet)
             {
-                string outputDirectory = Path.Combine(@"D:\digikalaprogram\", city);
+                string outputDirectory = Path.Combine(@"D:\", city);
                 if (Directory.Exists(outputDirectory))
                 {
                     Directory.Delete(outputDirectory, true);
@@ -67,7 +67,7 @@ namespace finaldigikala.Operations.CitesAndYearsInfo
 
             foreach (string year in yearSet)
             {
-                var outputDirectory = Path.Combine(@"D:\digikalaprogram\", year);
+                var outputDirectory = Path.Combine(@"D:\", year);
                 if (Directory.Exists(outputDirectory))
                 {
                     Directory.Delete(outputDirectory, true);
