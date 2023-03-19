@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +24,7 @@ namespace finaldigikala.Model
                 getdata.OrderId = int.Parse(line.Split(",")[0]);
                 getdata.CustomerId = int.Parse(line.Split(",")[1]);
                 getdata.ItemId = int.Parse(line.Split(",")[2]);
-                getdata.OrderDateTime = DateTime.Parse(line.Split(",")[3]);
+                getdata.OrderDateTime = Convert.ToDateTime(line.Split(",")[3]);
                 getdata.GrossAmount = int.Parse(line.Split(",")[4].Replace(".0", ""));
                 getdata.cityname = line.Split(",")[5];
                 getdata.Quantity = int.Parse(line.Split(",")[6].Replace(".0", ""));
