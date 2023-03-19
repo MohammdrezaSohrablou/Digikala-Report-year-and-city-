@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -17,6 +17,7 @@ namespace finaldigikala.DigikalaOperations
         {
             this.Digikaladata = Digikaladata;
         }
+        //1- search id
         public IEnumerable<GetData> CustomerSearch(int Cid)
         {
             return Digikaladata
@@ -32,7 +33,7 @@ namespace finaldigikala.DigikalaOperations
             return Digikaladata
                 .Where(X => X.ItemId == Iid).ToList();
         }
-
+        //2- total grossamount
         public List<int> AllSalesByCities(string city)
         {
             return Digikaladata.Where(x => x.cityname == city).Select(x => x.GrossAmount).ToList();
@@ -49,12 +50,12 @@ namespace finaldigikala.DigikalaOperations
 
             return total;
         }
-        //public Dictionary<bool, int> GetSalesByCity(string city)
+        //public Dictionary<string, int> SumSalesByCities(string city)
         //{
-        //    return Digikaladata.GroupBy(x => x.cityname == city).ToDictionary(y => y.Key, y => y.Sum(x => x.GrossAmount));
+        //    return Digikaladata.Where(x => x.cityname).GroupBy(x => x.cityname).ToDictionary(y => y.Key, y => y.Sum(x => x.GrossAmount));
         //}
 
-        
+
         private List<int> AllSalesByYear(int year)
         {
             return Digikaladata.
@@ -74,24 +75,29 @@ namespace finaldigikala.DigikalaOperations
 
         }
 
-        private List<int> AllSalesByItem(int Iid)
+
+        public Dictionary<int, int> SumSalesByItem(int Iid)
         {
-            return Digikaladata.
-             Where(x => x.ItemId == Iid).Select(x => x.GrossAmount).ToList();
+            return Digikaladata.Where(x => x.ItemId == Iid).GroupBy(x => x.ItemId).ToDictionary(y => y.Key, y => y.Sum(x => x.GrossAmount));
         }
-        public long SumSalesByItem(int Iid)
-        {
-            List<int> sales = AllSalesByItem(Iid);
-            long total = 0;
+        //private List<int> AllSalesByItem(int Iid)
+        //{
+        //    return Digikaladata.
+        //     Where(x => x.ItemId == Iid).Select(x => x.GrossAmount).ToList();
+        //}
+        //public long SumSalesByItem(int Iid)
+        //{
+        //    List<int> sales = AllSalesByItem(Iid);
+        //    long total = 0;
 
-            foreach (int sale in sales)
-            {
-                total += sale;
-            }
+        //    foreach (int sale in sales)
+        //    {
+        //        total += sale;
+        //    }
 
-            return total;
+        //    return total;
 
-        }
+        //}
 
     }
 }
